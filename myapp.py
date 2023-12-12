@@ -18,7 +18,7 @@ liveness = st.slider('Liveness (%)', min_value=0, max_value=100, value=50)
 
 # Make prediction
 if st.button('Predict'):
-    features = [[acousticness, danceability,key_encoded,instrumentalness,acousticness,liveness]]  # Add other features
+    features = [[acousticness, danceability,key_encoded,instrumentalness,liveness]]  # Add other features
     prediction = model.predict(features)
     st.write('Prediction:', prediction)
 
