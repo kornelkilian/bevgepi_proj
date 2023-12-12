@@ -5,7 +5,7 @@ import joblib
 model = joblib.load('mymodel.pkl')
 
 # Streamlit app
-st.title('Your Machine Learning Model App')
+st.title('Spotify Song Mode Prediction')
 
 # User input
 key_encoded = st.slider('Key Encoded', min_value=0, max_value=11, value=5)
