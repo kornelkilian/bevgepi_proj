@@ -8,13 +8,17 @@ model = joblib.load('mymodel.pkl')
 st.title('Your Machine Learning Model App')
 
 # User input
-acousticness = st.slider('Acousticness', 0.0, 1.0, 0.5)
-danceability = st.slider('Danceability', 0.0, 1.0, 0.5)
-# Add other input elements for your features
+key_encoded = st.slider('Key Encoded', min_value=0, max_value=11, value=5)
+danceability = st.slider('Danceability (%)', min_value=0, max_value=100, value=50)
+instrumentalness = st.slider('Instrumentalness (%)', min_value=0, max_value=100, value=50)
+acousticness = st.slider('Acousticness (%)', min_value=0, max_value=100, value=50)
+liveness = st.slider('Liveness (%)', min_value=0, max_value=100, value=50)
+
+
 
 # Make prediction
 if st.button('Predict'):
-    features = [[acousticness, danceability]]  # Add other features
+    features = [[acousticness, danceability,key_encoded,instrumentalness,acousticness,liveness]]  # Add other features
     prediction = model.predict(features)
     st.write('Prediction:', prediction)
 
