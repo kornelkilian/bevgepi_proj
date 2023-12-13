@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 
 # Load the trained model
-model = joblib.load('modelsaurus.pkl')
+model = joblib.load('mymodel.pkl')
 
 # Streamlit app
 st.title('Spotify Song Mode Prediction')
